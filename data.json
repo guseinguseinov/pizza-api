@@ -1,0 +1,44 @@
+{
+    "user": {
+        "firstName":"Gusein",
+        "lastName": "Guseinov",
+        "profilePicture": "url",
+        "gender": "male",
+        "birthDate": "nese data",
+        "phone": "+991828613",
+        "email": "nese@gmail.com",
+        "password": "1235678",
+        "isAdmin": false
+    },
+    "product": {
+        "name": "Margherita",
+        "image": "url",
+        "description":"Classic marinara sauce, authentic old-world pepperoni, all-natural Italian sausage, slow-roasted ham, hardwood smoked bacon, seasoned pork and beef. Best an our Hand Tossed crust. With more than 50 years of experience under our belts, we understand how to best serve our customers through tried and true service principles. Instead of following trends, we set them. We create food we’re proud to serve and deliver it fast, with a smile.",
+        "price": "2.60",
+        "weight": "2kg",
+        "dimensions": "26 × 26 × 5.5 cm",
+        "category": "pizza",
+        "review": {
+            "content": "zordu",
+            "date": "hansisa vaxt",
+            "userId": "Gusein"   
+        }
+    },
+    "cart": {
+        "items" :{
+            "type": "product"
+        },
+        "user": {
+            "type": "user"
+        },
+        "totalCost": "number 123"
+    },
+    "book": {
+        "user":{
+            "type":"user"
+        },
+        "isAviable": "true",
+        "bookedTime": "date",
+        "isExpired": "false"
+    }
+}
