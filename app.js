@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 import { config } from 'dotenv';
 import productRoute from "./routes/productRoute.js";
 import adminRoute from "./routes/admin/adminRoute.js";
+import adminProductRoute from "./routes/admin/productAdminRoute.js";
  
 
 // admin 
@@ -26,6 +27,6 @@ admin.use(express.urlencoded({ extended: true }));
 admin.use(express.json());
 
 admin.use('/', adminRoute);
-
+admin.use('/products', adminProductRoute);
 
 export {app , admin};

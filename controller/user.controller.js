@@ -8,14 +8,24 @@ config();
 
 const userCtrl = {
     async register(req, res){
-        const { email } = req.body;
-
+        const { firstName, lastName, gender, birthDate, phone, email, password, isAdmin } = req.body;
+        const { path } = req.file;
         const isEmailExists = await UserModel.findOne({ email });
         if (isEmailExists) {
             return res.status(409).json(generateResponseMessage(409, 'User email already exists', null));
         }
     
-        const newUser = await UserModel(req.body);
+        const newUser = await UserModel({
+            firstName,
+            lastName,
+            profilePicture: path,
+            gender,
+            birthDate, 
+            phone,
+            email,
+            password,
+            isAdmin
+        });
         await newUser.save();
     
         res.status(201).json( generateResponseMessage(201, "New user has been created", newUser) );
