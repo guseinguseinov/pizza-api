@@ -1,5 +1,8 @@
 import mongoose from "mongoose";
+import crypto from 'crypto';
+import { config } from 'dotenv';
 
+config();
 
 const UserSchema = new mongoose.Schema({
     firstName: {
@@ -46,6 +49,14 @@ const UserSchema = new mongoose.Schema({
     }
 }, {
     timestamps: true
+});
+
+
+UserSchema.pre('save', function (next){
+    this.password = crypto
+        .pbkdf2Sync(this.password, process.env.SECRET_SALT, 100000, 64, 'sha512')
+        .toString('hex');  
+    next();
 });
 
 const UserModel = mongoose.model('users', UserSchema);
