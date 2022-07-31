@@ -38,6 +38,6 @@ const ProductSchema = new mongoose.Schema({
     timestamps: true,
 });
 
-const ProductModel = mongoose.model('users', ProductSchema);
+const ProductModel = mongoose.model('products', ProductSchema);
 
 export default ProductModel;
