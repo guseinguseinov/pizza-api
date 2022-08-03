@@ -2,10 +2,10 @@ import mongoose from "mongoose";
 
 
 const CartSchema = new mongoose.Schema({
-    items:[ {type: "ObjectId", ref: "products"}],
+    items:[{ type: "ObjectId", ref: "products" }],
     user: {
         type: "ObjectId",
-        ref: "users",
+        ref: "User",
     },
     totalCost:Number
 }, {

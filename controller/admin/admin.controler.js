@@ -16,7 +16,7 @@ const adminCtrl = {
         
         const user = await UserModel.findOne({ email, password: hashedPassword });  
         if (!user) {
-            return res.status(404).json( generateResponseMessage(404, "There is no such user", null));
+            return res.status(404).json( generateResponseMessage(404, "Email or password is wrong", null));
         }
         
         const { isAdmin } = user.toObject();

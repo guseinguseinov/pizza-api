@@ -10,12 +10,18 @@ const ReviewSchema = new mongoose.Schema({
     user: {
         type: "ObjectId",
         ref: "users",
-    }
+        required: true,
+    },
+    product: {
+        type: "ObjectId",
+        ref: "products",
+        required: true,
+    }       
    
 }, {
     timestamps: true,
 });
 
-const ReviewModel = mongoose.model('users', ReviewSchema);
+const ReviewModel = mongoose.model('reviews', ReviewSchema);
 
 export default ReviewModel;
