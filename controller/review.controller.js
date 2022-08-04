@@ -48,11 +48,11 @@ const review = {
             { new: true }
         );
         if (!product) {
-            return res.status(404).json(generateResponseMessage(404, 'post not found', null));
+            return res.status(404).json(generateResponseMessage(404, 'product not found', null));
         }
 
         await ReviewModel.findByIdAndDelete(reviewId);
-        
+
         // https://stackoverflow.com/questions/61058347/how-to-delete-comment-from-post-on-node-express-and-mongoose-and-ajax
 
         res.status(200).json(generateResponseMessage(200, 'comment deleted', null));

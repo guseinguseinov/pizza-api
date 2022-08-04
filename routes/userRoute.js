@@ -13,6 +13,7 @@ userRoute.patch('/edit/:id', imageUpload, authenticateToken ,user.changeUserInfo
 userRoute.delete('/delete/:id', authenticateToken, user.deleteUser);
 
 // add to cart 
-userRoute.post('/:id/cart', authenticateToken, cart.addToCart);
+userRoute.post('/:id/cart', authenticateToken, cart.addToCart); 
+userRoute.delete('/:id/cart/:productId', authenticateToken, cart.removeFromCart); // send cartId from headers
 
 export default userRoute;

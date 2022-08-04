@@ -10,7 +10,10 @@ const CartSchema = new mongoose.Schema({
         type: "ObjectId",
         ref: "User",
     },
-    totalCost:Number
+    numberOfproduct: {
+        type: Number,
+        default: 1,
+    }
 }, {
     timestamps: true,
 });

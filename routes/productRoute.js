@@ -8,9 +8,15 @@ const productRoute = express.Router();
 productRoute.get('/', product.getAllProducts);
 productRoute.get('/:id', product.getProduct);
 
+
 // reviews
 productRoute.post('/:id/reviews', authenticateToken, review.addReview);
 productRoute.patch('/:id/reviews/:reviewId', authenticateToken, review.editReview);
 productRoute.delete('/:id/reviews/:reviewId', authenticateToken, review.deleteReview);
 
 export default productRoute;
+
+
+// test reviews
+// add to cart 
+// book a place
